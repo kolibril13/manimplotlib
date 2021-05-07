@@ -8,7 +8,6 @@ This gallery contains a collection of manim0.5.0 connected to matplotlib:
 
     import matplotlib.pyplot as plt
 
-
     def my_function(amplitude, x):
         return amplitude * np.sin(x)
 

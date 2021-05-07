@@ -6,7 +6,6 @@ This gallery contains a collection of manim0.6.0 connected to matplotlib:
 
 .. manim:: ConnectingMatplotlib
 
-    from manim import *
     import matplotlib.pyplot as plt
 
     def my_function(amplitude, x):

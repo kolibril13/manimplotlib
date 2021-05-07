@@ -37,7 +37,7 @@ This gallery contains a collection of manim0.5.0 connected to matplotlib:
                 mob.become(new_mob)
 
             image.add_updater(update_image)
+            
 
             self.play(tr_amplitude.animate.set_value(amp2), run_time=3)
-
 

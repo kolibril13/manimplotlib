@@ -2,26 +2,24 @@
 Example Gallery
 ###############
 
-This gallery contains a collection of manim0.5.0 connected to matplotlib:
+This gallery contains a collection of manim0.6.0 connected to matplotlib:
 
 .. manim:: ConnectingMatplotlib
 
+    from manim import *
     import matplotlib.pyplot as plt
-
 
     def my_function(amplitude, x):
         return amplitude * np.sin(x)
-
 
     def mpl_image_plt(amplitude, x):
         fig, ax = plt.subplots()
         ax.plot(x, my_function(amplitude, x))
         ax.set_ylim(-1, 1)
         fig.canvas.draw()
-        img = ImageMobject(fig.canvas.buffer_rgba()).scale(4.5)
+        img = ImageMobject(fig.canvas.buffer_rgba()).scale(2)
         plt.close(fig)
         return img
-
 
     class ConnectingMatplotlib(Scene):
         def construct(self):
@@ -37,6 +35,4 @@ This gallery contains a collection of manim0.5.0 connected to matplotlib:
                 mob.become(new_mob)
 
             image.add_updater(update_image)
-            
-
-            self.play(tr_amplitude.animate.set_value( amp2 ), run_time=3)
+            self.play(tr_amplitude.animate.set_value(amp2), run_time=3)

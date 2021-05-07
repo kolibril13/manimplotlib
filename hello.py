@@ -30,7 +30,6 @@ class ConnectingMatplotlib(Scene):
             mob.become(new_mob)
 
         image.add_updater(update_image)
-
         self.play(tr_amplitude.animate.set_value(amp2), run_time=3)
 
 

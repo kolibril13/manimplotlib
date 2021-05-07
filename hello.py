@@ -1,10 +1,8 @@
 from manim import *
 import matplotlib.pyplot as plt
 
-
 def my_function(amplitude, x):
     return amplitude * np.sin(x)
-
 
 def mpl_image_plt(amplitude, x):
     fig, ax = plt.subplots()
@@ -14,7 +12,6 @@ def mpl_image_plt(amplitude, x):
     img = ImageMobject(fig.canvas.buffer_rgba()).scale(2)
     plt.close(fig)
     return img
-
 
 class ConnectingMatplotlib(Scene):
     def construct(self):
@@ -34,10 +31,10 @@ class ConnectingMatplotlib(Scene):
         self.play(tr_amplitude.animate.set_value(amp2), run_time=3)
 
 
-
-
-import os ; import sys
+import os
+import sys
 from pathlib import Path
+
 if __name__ == "__main__":
     project_path = Path(sys.path[1]).parent
     script_name = f"{Path(__file__).resolve()}"

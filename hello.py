@@ -11,7 +11,7 @@ def mpl_image_plt(amplitude, x):
     ax.plot(x, my_function(amplitude, x))
     ax.set_ylim(-1, 1)
     fig.canvas.draw()
-    img = ImageMobject(fig.canvas.buffer_rgba()).scale(4.5)
+    img = ImageMobject(fig.canvas.buffer_rgba()).scale(2)
     plt.close(fig)
     return img
 
@@ -31,17 +31,14 @@ class ConnectingMatplotlib(Scene):
 
         image.add_updater(update_image)
 
-        self.play(tr_amplitude.set_value, amp2, run_time=3)
+        self.play(tr_amplitude.animate.set_value(amp2), run_time=3)
 
 
-import os
-import sys
+
+
+import os ; import sys
 from pathlib import Path
-
 if __name__ == "__main__":
     project_path = Path(sys.path[1]).parent
     script_name = f"{Path(__file__).resolve()}"
-    os.system(
-        f"manim  -l --custom_folders  --disable_caching -i -m -p -c 'BLACK' --config_file '{project_path}/manim_settings.cfg' "
-        + script_name
-    )
+    os.system(f"manim  -ql --custom_folders  --disable_caching  -p -c 'BLACK' --config_file '{project_path}/manim_settings.cfg' " + script_name)

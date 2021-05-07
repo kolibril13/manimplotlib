@@ -241,8 +241,6 @@ class ManimDirective(Directive):
         if not (save_as_gif or save_last_frame):
             filename = f"{output_file}.mp4"
             filesrc = config.get_dir("video_dir") / filename
-            destfile = os.path.join(dest_dir, filename)
-            shutil.copyfile(filesrc, destfile)
         elif save_as_gif:
             filename = f"{output_file}.gif"
             filesrc = config.get_dir("video_dir") / filename
@@ -256,6 +254,7 @@ class ManimDirective(Directive):
             clsname=clsname,
             clsname_lowercase=clsname.lower(),
             hide_source=hide_source,
+            filename=filename,
             filesrc_rel=os.path.relpath(filesrc, setup.confdir),
             output_file=output_file,
             save_last_frame=save_last_frame,
@@ -297,14 +296,14 @@ TEMPLATE = r"""
 {% if not (save_as_gif or save_last_frame) %}
 .. raw:: html
 
-    <video class="manim-video" controls loop autoplay src="./{{ output_file }}.mp4"></video>
+    <video class="manim-video" controls loop autoplay src="_static/{{ filename }}"></video>
 
 {% elif save_as_gif %}
-.. image:: /{{ filesrc_rel }}
+.. image:: _static/{{ filename }}
     :align: center
 
 {% elif save_last_frame %}
-.. image:: /{{ filesrc_rel }}
+.. image:: _static/{{ filename }}
     :align: center
 
 {% endif %}

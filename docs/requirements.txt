@@ -2,5 +2,5 @@ Sphinx==3.1.2
 recommonmark>=0.5.0
 sphinx-copybutton
 sphinxext-opengraph
-manim == 0.6.0
+manim
 matplotlib

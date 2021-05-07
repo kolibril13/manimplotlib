@@ -1,6 +1,6 @@
 manimplotlib - Example Gallery
 ========================================
-Link to github: https://github.com/kolibril13/manimplotlib
+Link to GitHub: https://github.com/kolibril13/manimplotlib
 
 This gallery contains a collection of manim 0.6.0 connected to matplotlib :
 

@@ -2,7 +2,7 @@
 Example Gallery
 ###############
 
-This gallery contains a collection of manim0.6.0 connected to matplotlib:
+This gallery contains a collection of manim 0.6.0 connected to matplotlib :
 
 .. manim:: ConnectingMatplotlib
 

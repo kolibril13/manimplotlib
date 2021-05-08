@@ -77,9 +77,9 @@ a {
 :root {
     --admonition-title-font-size: 1rem;
     --color-admonition-title: #FF5900;
-    --color-admonition-title-text: #FFCB6B;
-    --color-admonition-title-background: #263238;
-    --color-link: #FF5900;
-    --color-link--hover: #FF5900;
+    --color-admonition-title-text: #04fc23;
+    --color-admonition-title-background: #ffffff;
+    --color-link: #fcb389;
+    --color-link--hover: #a7552c;
     --icon-admonition-default: none;
 }

@@ -52,7 +52,8 @@ extensions = [
     'sphinx.ext.autosummary'
 ]
 
-pygments_style = 'material'
+pygments_style = 'manni'
+
 
 autosummary_generate = False
 add_module_names = False

@@ -1,7 +1,3 @@
-# manimplotlib
+## manimplotlib  - Matplotlib animations with Manim
 
-
-Find the documentation here: https://manimplotlib.readthedocs.io/
-
-Matplotlib animations with manim
-![](ConnectingMatplotlib.gif)
+Collection of scripts to animate matplotlib plots with manim: https://manimplotlib.readthedocs.io/

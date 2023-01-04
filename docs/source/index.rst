@@ -13,3 +13,4 @@ Content
     
     manimplotlib
     manimplotlib2
+    manimplotlib3

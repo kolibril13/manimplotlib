@@ -40,7 +40,7 @@ if os.environ.get("READTHEDOCS") == "True":
 
 # -- Project information -----------------------------------------------------
 
-project = 'FlyingFrames'
+project = 'Manimplotlib'
 copyright = 'kolibril13'
 author = 'kolibril13'
 
@@ -79,10 +79,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-html_title = f"FlyingFrames v{manim.__version__}"
+html_title = f"Manimplotlib"
 html_theme = 'furo'
-html_logo = '_static/flyingframes_logo.png'
-html_favicon = '_static/flyingframes_favicon.ico'
+html_logo = '_static/logo.png'
+# html_favicon = '_static/favicon.ico'
 
 
 html_css_files = ["custom.css"]

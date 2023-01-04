@@ -1,2 +1,2 @@
 imageio-ffmpeg
-ipykernel
+ipython!=8.7.0

@@ -1,7 +1,16 @@
 version: 2
+formats: all
+
+build:
+  image: latest
+  apt_packages:
+    - libpango1.0-dev
 
 python:
-  version: 3.7
+  version: 3.8
   install:
     - requirements: docs/rtd-requirements.txt
     - requirements: docs/requirements.txt
+
+  system_packages: true
+

@@ -20,25 +20,31 @@ sys.path.insert(0, os.path.abspath('.'))
 
 if os.environ.get("READTHEDOCS") == "True":
     site_path = get_python_lib()
-    # we need to add ffmpeg to the path
     ffmpeg_path = os.path.join(site_path, "imageio_ffmpeg", "binaries")
-    # the included binary is named ffmpeg-linux..., create a symlink
+    print("########")
+    print("good1")
     [ffmpeg_bin] = [
         file for file in os.listdir(ffmpeg_path) if file.startswith("ffmpeg-")
     ]
-    os.symlink(
-        os.path.join(ffmpeg_path, ffmpeg_bin), os.path.join(ffmpeg_path, "ffmpeg")
-    )
+    print("########*****")
+    print("good2")
+    try:
+        os.symlink(os.path.join(ffmpeg_path, ffmpeg_bin), os.path.join(ffmpeg_path, "ffmpeg"))
+    except FileExistsError:
+        print('File is already there!!!!!!!' )
+    else:
+        print('file created :)')
+    print("good3")
     os.environ["PATH"] += os.pathsep + ffmpeg_path
+    print("good4")
 
 # -- Project information -----------------------------------------------------
 
-project = 'manimplotlib'
-copyright = '2021, kolibril13'
+project = 'FlyingFrames'
+copyright = 'kolibril13'
 author = 'kolibril13'
 
 # The full version, including alpha/beta/rc tags
-release = '4/2021'
 
 
 # -- General configuration ---------------------------------------------------
@@ -47,13 +53,14 @@ release = '4/2021'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'manim_directive',
+    'sphinx_copybutton',
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary'
+    'sphinx.ext.autosummary',
+    'nbsphinx'
 ]
-
-pygments_style = 'manni'
-
+nbsphinx_allow_errors = True
+pygments_style = "sphinx"
+pygments_dark_style = "monokai"
 
 autosummary_generate = False
 add_module_names = False
@@ -72,9 +79,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-# html_title = f"Manimplotlib v{manim_rubikscube.__version__}"
+html_title = f"FlyingFrames v{manim.__version__}"
 html_theme = 'furo'
-html_logo = '_static/logo.png'
+html_logo = '_static/flyingframes_logo.png'
+html_favicon = '_static/flyingframes_favicon.ico'
+
 
 html_css_files = ["custom.css"]
 

@@ -1,8 +1,7 @@
-Example Gallery
-========================================
+Welcome!
+========
 
-Hi!
-
+This is a gallery of examples connecting manim and matplotlib.
 
 Content
 -------
@@ -12,8 +11,5 @@ Content
     :glob:
 
     
-    ch3
+    manimplotlib
 
-
-Repository on GitHub:
-https://github.com/kolibril13/manimplotlib

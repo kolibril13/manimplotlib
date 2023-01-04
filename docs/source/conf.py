@@ -82,7 +82,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_title = f"Manimplotlib"
 html_theme = 'furo'
 html_logo = '_static/logo.png'
-# html_favicon = '_static/favicon.ico'
+html_favicon = '_static/favicon.png'
 
 
 html_css_files = ["custom.css"]

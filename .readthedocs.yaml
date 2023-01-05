@@ -7,7 +7,7 @@ build:
     - libpango1.0-dev
 
 python:
-  version: 3.8
+  version: 3.9
   install:
     - requirements: docs/rtd-requirements.txt
     - requirements: docs/requirements.txt

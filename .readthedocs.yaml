@@ -1,16 +1,36 @@
-version: 2
-formats: all
+# .readthedocs.yaml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
+# Required
+version: 2
+
+# Set the version of Python and other tools you might need
 build:
-  image: latest
+  os: ubuntu-22.04
+  tools:
+    python: "3.11"
+    # You can also specify other tool versions:
+    # nodejs: "19"
+    # rust: "1.64"
+    # golang: "1.19"
   apt_packages:
     - libpango1.0-dev
 
-python:
-  version: 3.9
-  install:
-    - requirements: docs/rtd-requirements.txt
-    - requirements: docs/requirements.txt
 
-  system_packages: true
+# Build documentation in the docs/ directory with Sphinx
+sphinx:
+   configuration: docs/source/conf.py
+
+# If using Sphinx, optionally build your docs in additional formats such as PDF
+# formats:
+#    - pdf
+
+# Optionally declare the Python requirements required to build your docs
+python:
+   install:
+   - requirements: docs/rtd-requirements.txt
+   - requirements: docs/requirements.txt
+
+   system_packages: true
 

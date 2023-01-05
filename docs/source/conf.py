@@ -14,7 +14,7 @@ import os
 import sys
 from distutils.sysconfig import get_python_lib
 
-# import manim
+import manim
 
 sys.path.insert(0, os.path.abspath('.'))
 

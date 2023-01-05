@@ -9,9 +9,5 @@ Content
 .. toctree::
     :maxdepth: 2
     :glob:
-
-    
+        
     manimplotlib
-    manimplotlib2
-    manimplotlib3
-    manimplotlib4

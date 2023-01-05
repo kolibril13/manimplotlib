@@ -10,5 +10,7 @@ Content
     :maxdepth: 2
     :glob:
         
-    hello
     manimplotlib
+    manimplotlib2
+    manimplotlib3
+    manimplotlib4

@@ -11,3 +11,4 @@ Content
     :glob:
         
     hello
+    manimplotlib

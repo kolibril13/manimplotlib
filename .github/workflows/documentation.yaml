@@ -1,26 +1,35 @@
-name: Docs
-on: push
+name: CI
+
+on:
+  push:
+    branches:    
+      - master
+
 jobs:
-  docs:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: maxheld83/pandoc@v2
-
-      - uses: actions/setup-python@v2
-      - name: Install dependencies
-        run: |
-          pip install sphinx furo sphinx-copybutton nbsphinx 
-
-
-      - name: Sphinx build
-        run: |
-          sphinx-build docs/source _build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-        with:
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/
-          force_orphan: true
+    - uses: actions/checkout@v1
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        pre-build-command: "apt-get update --allow-releaseinfo-change -y && apt-get install -y pandoc librsvg2-bin inkscape latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended fonts-lmodern"
+        docs-folder: "docs/source"
+        build-command: "make -C ../ html " # latexpdf
+    # Create an artifact of the html build.
+    - uses: actions/upload-artifact@v1
+      with:
+        name: HTML
+        path: build/html/
+    # Create an artifact of the pdf build.
+    # - uses: actions/upload-artifact@v1
+    #   with:
+    #     name: PDF
+    #     path: build/latex/nbsphinx.pdf
+    # Publish html build to gh-pages branch.
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build/html

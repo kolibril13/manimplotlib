@@ -5,10 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: maxheld83/pandoc@v2
+
       - uses: actions/setup-python@v2
       - name: Install dependencies
         run: |
-          pip install sphinx furo sphinx-copybutton nbsphinx pandoc
+          pip install sphinx furo sphinx-copybutton nbsphinx 
 
 
       - name: Sphinx build

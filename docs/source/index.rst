@@ -14,3 +14,4 @@ Content
     manimplotlib2
     manimplotlib3
     manimplotlib4
+    manimplotlib_rendered
